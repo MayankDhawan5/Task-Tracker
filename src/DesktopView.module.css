@@ -1,10 +1,9 @@
 .desktopViewChild {
+  border: 0;
+  background-color: transparent;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #fff;
-  width: 1920px;
-  height: 1080px;
 }
 .uniqueSchools {
   color: var(--color-palevioletred-100);
@@ -13,75 +12,44 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 120px;
-  text-align: center;
   display: flex;
   align-items: center;
   width: 656px;
   height: 263px;
 }
 .groupChild {
-  top: 0;
-  left: 0;
   border-radius: var(--br-3xs);
   background-color: var(--color-whitesmoke);
+  width: 519px;
+  height: 56px;
 }
 .email,
-.groupChild,
-.rectangleParent {
+.groupChild {
   position: absolute;
-  width: 519px;
-  height: 56px;
-}
-.email {
   top: 0;
   left: 0;
-  white-space: pre-wrap;
-  display: flex;
-  align-items: center;
 }
+.rectangleContainer,
+.rectangleGroup,
 .rectangleParent {
+  position: absolute;
   top: 377px;
   left: 47px;
-}
-.rectangleGroup {
-  top: 470px;
-  left: 47px;
-}
-.digitHexCode,
-.rectangleContainer,
-.rectangleGroup {
-  position: absolute;
   width: 519px;
   height: 56px;
 }
-.digitHexCode {
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
+.rectangleContainer,
+.rectangleGroup {
+  top: 470px;
 }
 .rectangleContainer {
   top: 563px;
-  left: 47px;
 }
+
 .join,
 .rectangleDiv {
-  position: absolute;
   top: 661px;
   left: 161px;
-  width: 264px;
-  height: 53px;
-}
-.rectangleDiv {
-  border-radius: 25px;
-  background-color: var(--color-palevioletred-100);
-}
-.join {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 .joinUniqueSchoolsParent {
   position: absolute;
@@ -89,6 +57,8 @@
   left: 164px;
   width: 656px;
   height: 714px;
+  text-align: center;
+  font-size: 120px;
 }
 .dhvanit0x1111sDhvgmai,
 .groupChild1 {
@@ -217,6 +187,7 @@
   left: 0;
 }
 .groupContainer {
+  margin: 0;
   top: 415px;
   left: 1029px;
   width: 765px;
