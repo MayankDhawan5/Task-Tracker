@@ -35,6 +35,9 @@ const decryptData = (encryptedData) => {
 
 const DesktopView = () => {
   const [tableData, setTableData] = useState([]);
+  const [nameInput, setNameInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [hexInput, setHexInput] = useState('');
   const [subscriberCount, setSubscriberCount] = useState(0);
 
   useEffect(() => {
@@ -54,17 +57,23 @@ const DesktopView = () => {
     setSubscriberCount(tableData.length);
   }, [tableData]);
 
-  const handleJoin = (name, email) => {
+  const handleJoin = () => {
     const hexCode = generateHexCode();
-    const newRow = { id: uuidv4(), name, email, hexCode };
+    const newRow = {
+      id: uuidv4(),
+      name: nameInput,
+      email: emailInput,
+      hexCode,
+    };
     setTableData([...tableData, newRow]);
-    setSubscriberCount(subscriberCount + 1);
+    setNameInput('');
+    setEmailInput('');
+    setHexInput('');
   };
 
   const handleDelete = (id) => {
     const updatedData = tableData.filter((row) => row.id !== id);
     setTableData(updatedData);
-    setSubscriberCount(subscriberCount - 1);
   };
 
   const handleEdit = (id, newName, newEmail) => {
@@ -121,6 +130,8 @@ const DesktopView = () => {
             sx={{ width: 519 }}
             variant="filled"
             multiline
+            value={emailInput}
+            onChange={(e) => setEmailInput(e.target.value)}
           />
         </div>
         <div className={styles.rectangleGroup}>
@@ -132,6 +143,8 @@ const DesktopView = () => {
             sx={{ width: 519 }}
             variant="filled"
             multiline
+            value={nameInput}
+            onChange={(e) => setNameInput(e.target.value)}
           />
         </div>
         <div className={styles.rectangleContainer}>
@@ -143,6 +156,8 @@ const DesktopView = () => {
             sx={{ width: 519 }}
             variant="filled"
             multiline
+            value={hexInput}
+            onChange={(e) => setHexInput(e.target.value)}
           />
         </div>
         <div className={styles.rectangleDiv}>
@@ -151,9 +166,7 @@ const DesktopView = () => {
             sx={{ width: 264 }}
             color="primary"
             variant="contained"
-            onClick={() =>
-              handleJoin(prompt('Enter name'), prompt('Enter email'))
-            }
+            onClick={handleJoin}
           >
             Join
           </Button>
